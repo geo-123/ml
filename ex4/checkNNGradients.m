@@ -3,7 +3,7 @@ function checkNNGradients(lambda)
 %backpropagation gradients
 %   CHECKNNGRADIENTS(lambda) Creates a small neural network to check the
 %   backpropagation gradients, it will output the analytical gradients
-%   produced by your backprop code and the numerical gradients (computed
+%   produced by the backprop code and the numerical gradients (computed
 %   using computeNumericalGradient). These two gradient computations should
 %   result in very similar values.
 %
@@ -40,9 +40,7 @@ disp([numgrad grad]);
 fprintf(['The above two columns you get should be very similar.\n' ...
          '(Left-Your Numerical Gradient, Right-Analytical Gradient)\n\n']);
 
-% Evaluate the norm of the difference between two solutions.  
-% If you have a correct implementation, and assuming you used EPSILON = 0.0001 
-% in computeNumericalGradient.m, then diff below should be less than 1e-9
+% Evaluating the norm of the difference between two solutions.  
 diff = norm(numgrad-grad)/norm(numgrad+grad);
 
 fprintf(['If your backpropagation implementation is correct, then \n' ...
